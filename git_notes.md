@@ -281,8 +281,8 @@ git merge <branch_name>
 ```
                  (Parent-1)   (merge commit)
 ## ----> ##------->## ----------------->##
-         |		 <Head>          ^ 
-         |              <bugfix>        /
+         |		 <Head>         ^ 
+         |              <bugfix>       /
          |			      /
          +-------->##---->##---------
      	                (Parent -2)	
@@ -749,12 +749,12 @@ git cat-file -p <tree hash/ commit hash>
 ```
               root tree
    index.html/ \      \ styles
-	        / main.js  \
+	    / main.js  \
           blob    \    tree
                  blob  /   \ nav.css
-		              /     \
-	          app.css/       \ 
-	                blob    blob
+		      /     \
+	      app.css/       \ 
+	            blob    blob
 ```		    
 * In an existing repo we can see trees. 
 ```
