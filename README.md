@@ -1,5 +1,5 @@
 # Git
-* This repo Contains the rough notes for Git and Github, made while going through the below bootcamp. 
+* This repo Contains my rough notes for learning Git and Github, made while going through the below bootcamp. 
 * Course Name: The Git and Github Bootcamp
 * Course Duration: 17 hours 
 
