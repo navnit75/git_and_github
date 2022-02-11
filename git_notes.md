@@ -1,8 +1,8 @@
 # GIT
-## DOCUMENTATION
+## Documentation
 [git docs](https://www.git-scm.com)
 
-## INTIAL CONFIGURATION
+## Initial Configuration
 
 * Configuring your username
 ```shell
@@ -22,7 +22,7 @@ git config --global user.email "kumar.navnit4175@gmail.com"
 git config user.email
 ```
 
-## BASIC COMMANDS
+## Basic Commands
 
 * Info regarding current status of git repo
 ```shell
@@ -35,7 +35,7 @@ git init
 * WARNING! DO NOT INITIALIZE A REPO INSIDE OF A REPO
     * i.e. Before running git init , use git status to verify that you are not currently inside a repo.
 
-## GIT ADD
+## git add 
 * WORKFLOW
 ```
 /**********************************************************/
@@ -67,7 +67,7 @@ git add file1 file2
 ```shell
 git add . 
 ```
-## GIT COMMIT
+## git COMMIT
 * Committing the files for creating the checkpoint
 ```shell
 git commit -m "my message" 
@@ -85,21 +85,21 @@ git commit -a -m "<message>"
 ```
 
 
-## GIT LOG
+## git LOG
 * Retrives the information of commits
 ```shell
 git log
 ```
 * It will show an identifier for every commit called commit hash.
 
-## ATOMIC COMMITS
+## Atomic Commits
 * Keep your commits on single thing. 
 * So that it is easier to roll back. 
 * And it is easier to display changes. 
 * Write the message , as if you are giving code base to change its behaviour
 * make xyzz to frotz
 
-## CHANGING THE DEFAULT EDITOR OF THE GIT
+## Changing the default editor of GIT
 * This is for changing the default editor to VSCode
 ```shell
 git config --global core.editor "code --wait"
@@ -112,10 +112,9 @@ git config --global core.editor "nano -w"
 ```shell
 git config --global core.editor "vim"
 ```
+
+## Log Tweaking
 * Because sometimes the commit messages has to be big
-
-
-## LOG TWEAKING
 * Shows first 5 character of commit hash.
 ```shell
 git log --abbrev-commit
@@ -131,7 +130,7 @@ git log --pretty=oneline
 * Remember to keep the first line of commit message as summary of the whole commit message
 
 
-## AMENDING COMMITS
+## Amending Commits
 * This only works if you have made mistake on recent commit.
 
 * Mistake commit 
@@ -157,13 +156,13 @@ git commit --amend
 * You need to commit .gitignore in every commit. 
 * If there is any changes happens in the ignored files , the git will not cover. 
 
-## HEAD
+## Head
 * To know where the head is pointing at 
 ```
 git log 
 HEAD -> master 
 ```
-## GIT BRANCH
+## git BRANCH
 * To list the number of branches 
 ```shell
 git branch
@@ -191,7 +190,7 @@ git switch <branch_name>
 git switch -c <branch_name> 
 ```
 
-## GIT CHECKOUT
+## git CHECKOUT
 * Another way of switching
 ```shell
 git checkout <branch_name> 
@@ -206,7 +205,7 @@ git checkout -b <branch_name>
 * But instead of that if we added new file, it won't give any error. But the new file created would be in the staging area.
 
 
-## DELETE BRANCH
+## delete BRANCH
 * Deleting a branch. ( You cannot be on same branch which you are deleting. It will also give an error if branch we are deleting is not MERGED )
 ```shell
 git branch -d <branch Name> 
@@ -217,14 +216,14 @@ git branch --delete <branch Name>
 git branch -D <branch_name> 
 git brach --delete --force <branch_name>  
 ```
-## RENAMING BRANCH
+## renaming BRANCH
 * Change to the branch which you want to rename 
 ```shell
 git branch -m <new_name> 
 git branch --move <new_name> 
 ```
 
-## MERGE
+## Merge
 * Merge operation is compilicated operation and required some flow knowledge. 
 * There could be conflicts in the code. 
 * One of the easiest and simplest variety of merge with no conflicts is , FAST FORWARD MERGE. 
@@ -234,7 +233,7 @@ git branch --move <new_name>
 git switch master
 git merge <branch_name> 
 ```
-## FAST FORWARDING MERGE
+## Fast Forwarding MERGE
 * Before Merging 
 ```     
       <Master>
@@ -259,7 +258,7 @@ git merge <branch_name>
 
 
 
-## RECURSIVE MERGE
+## Recursive MERGE
 * Now this variety of merge is also optional when there is no conflicts. 
 * If we have file say a. It has some content
 * If we append the data to that file and add(edits) into new branch by providing different commit names.  
@@ -297,7 +296,7 @@ git merge <branch name>
 *It will automatically open text editor for inputing the message for commit. 
 
 
-## CONFLICT
+## Conflict
 * As we type the command 
 * A warning message would be shown regarding the conflict. 
 ```
@@ -308,7 +307,7 @@ git merge <branch_name>
 * I would commit using the new file created, by removing the conflicts. 
 
 
-## GIT DIFF
+## git DIFF
 * Without additional options, git diff lists all the changes in our working directory that are not staged for the next commit. 
 * Basically you compare your before the edit version of file, to the edited version. 
 * For each comparison the git tells which file it is comparing. Usually these are two verisons of the same file.
@@ -374,7 +373,7 @@ git diff branch1 branch2 filename
 git diff commit_hash1..commit_hash2
 ```
 
-## GIT STASHING
+## Stashing
 * Scenerio , if you are working on something and suddenly you want to revert back to previous commit. 
     * My changes come with me to the destination branch. [ Happens only when there are no conflicts]
     * Git won't let me switch if it detects potential conflicts. [ When there are conflicts ]
@@ -427,7 +426,7 @@ git stash clear
 
 
 
-## ROLLING BACK TO PREV COMMIT
+## Rolling back to previous COMMITS
 * We can roll back to previous commits 
 ```
 git checkout <commit hash> 
@@ -455,7 +454,7 @@ git switch -
 ```
 
 
-## RESTORING BACK THE CHANGES 
+## Restoring back the changes
 
 * Supppose we edited the files , now we want to go back the (without edited version of the file )
 * We can do that by , undoing the change ( deleting whatever we have changed ) 
@@ -478,14 +477,14 @@ git restore --source HEAD~1 <filename>
 git restore --staged <filename>
 ```
 
-## USING GIT RESET       
+## git RESET     
 * We can revert back to commits , and delete all the previous ones. 	
 * But changes wouldn't be modified. 	
 ```
 git reset <commit_hash> 
 ```
 
-## GIT HARD RESET
+## git HARD RESET
 * We can use this to undo till the <commit whose hash we have provided>
 * And all the corresponding we did till that commit.
 * BE VERY CAREFUL 
@@ -495,7 +494,7 @@ git reset --hard <commit-hash>
 git reset --hard <head reference using "~" approach> 
 ```
 
-## REVERTING 
+## Reverting
 * git revert is similar to git reset in that both "undo" changes, but they accomplish it in different ways. 
 * git reset actually moves the branch pointer backwards eliminating commits.
 * git revert creates a brand new commit which reverse/undos the changes from a commit. Because it results in a new commit, you will be prompted to enter a commit message.
@@ -507,7 +506,7 @@ git reset --hard <head reference using "~" approach>
 *  There may also arise various conflicts
 git revert <commit-hash> 
 
-## SITUATION BASED DIFF. B/W REVERT AND RESET 
+## Situation based diff. B/W Revert and Reset 
 * Situations to use revert : 
     * If you want to reverse some commits that other people already have on their machines, you should use revert. 
 
@@ -517,7 +516,7 @@ git revert <commit-hash>
 
 
 
-## GIT REBASING
+## git REBASING
 * Dangerous
 * Concatenates the feature branch with the master branch , such that the entire feature branch begins at the tip of master branch . 
 * All of the work is still there, but we have re-written history. 
@@ -533,7 +532,7 @@ git rebase master
 git rebase --abort ( in case of conflict )
 ```
 
-### WORKFLOW
+### Rebase Workflow
 * try to rebase
 * conflict detected
 * resolve conflict 
@@ -542,7 +541,7 @@ git rebase --continue ( to continue the rebase )
    or 
 git rebase --abort
 ```
-## INTERACTIVE REBASING
+## Interactive Rebase
 * Here we are basically recommitting the commits. 
 * We need to specify the range till we want to edit. 
 ```
@@ -582,7 +581,7 @@ pick 130a9eb Create README.md
 
 
 
-## GIT TAGS
+## git TAGS
 * Sticky note on commit
 * Two types of tags
     * Lightweight tags : name/label pointing to a particular commit. 
@@ -683,7 +682,7 @@ git config -- local user.email "<email>"
 [color "diff"]
 	old = magenta bold
 ```
-## HASHING FUNCTION
+## Hashing Function
 
 [Deep Dive Slide](https://www.canva.com/design/DAEV-h9bSG4/R6FyldDe8CO8Wfn8z92yRA/view?utm_content=DAEV-h9bSG4&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton#35)
 
@@ -769,7 +768,7 @@ git cat-file -t <tree hash>
 * Commit store reference to parent commit(s), the author, the committer, and of course the commit message.
 
 
-## GIT REFLOG
+## git REFLOG
 * Git usually keeps a record of when the tips of branches and other references were updated in the repo. 
 * We can view and update these reference logs using the git reflog command. 
 * It stores all the event , in which our HEAD changes. 
@@ -779,7 +778,7 @@ git cat-file -t <tree hash>
 * Location: .git/logs/refs/head
 * Location: .git/logs/refs/remotes
 
-* LIMITATION: 
+* Limitation: 
     * reflogs are local, if I am cloning some directory I would not be recieving their reflogs. 
     * reflogs would be storing only my particular reflog. 
     * Reflogs are not permanent , git cleans out old enteries around 90 days, though this can be configured. 
@@ -813,7 +812,7 @@ git checkout HEAD@{2}
 ```
 git diff HEAD@{0} HEAD@{5}
 ```
-### TIMED REFERENCE
+### Timed Reference
 * Every entry in the reference log has a timestamp assosiated with it. 
 * We can filter reflogs enteries by time/date by using time qualifiers like . 
 ```
@@ -830,7 +829,7 @@ git checkout master@{1.week.ago}
 git diff main@{0} main@{yesterday}
 git diff HEAD@{0} HEAD@{yesterday}
 ```
-## UNDOING STUFF USING REFLOG
+## Undoing stuff using REFLOG
 * Suppose a condition in which I have hard reset some commit . 
 ```
 git reset --hard <commit hash> 
@@ -856,7 +855,8 @@ git reset --hard master@{1}
 : master@{1}  
 ```
 * is quantifier which we really want to revert back to .
-### UNDOING REBASE 
+	
+### undoing REBASE
 * After doing rebasing 
 * If you have edited say 5 commits
 ```
@@ -874,7 +874,7 @@ git reset --hard branch_name@{num}
 * Later we realized , oh the changes we were perfect. 
 * We can again revert back by going through the reflog. 
 
-## CUSTOM GIT ALIASES
+## Custom git aliases
 * Global config file is kept at 
 ```
 LINUX: ~/.gitconfig
