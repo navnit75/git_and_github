@@ -177,7 +177,7 @@ git branch <branch-name>
 ```shell
 git branch -v 
 ```
-## GIT SWITCH
+## git SWITCH
 * Used to switch branches. Branch name has to be perfect. 
 ```shell
 git switch <branch_name> 
