@@ -4,7 +4,7 @@
 * Course Duration: 17 hours 
 
 # Certificate of Completion
-- [(Just for my reference) Completion Certificate](https://udemy-certificate.s3.amazonaws.com/image/UC-48d5964c-a4db-459b-a652-835af3ccc754.jpg)
+- **(Just for my reference)**[Completion Certificate](https://udemy-certificate.s3.amazonaws.com/image/UC-48d5964c-a4db-459b-a652-835af3ccc754.jpg)
 
 
 ## WHY GIT IS NEEDED? 
