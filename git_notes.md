@@ -178,24 +178,24 @@ $ git branch -v
 ## git SWITCH
 * Used to switch branches. Branch name has to be perfect. 
 ```shell
-git switch <branch_name> 
+$ git switch <branch_name> 
 ```
 * Once switch and create commits. 
 * We can see (master) written , in front the tip of master branch. 
 * Meanwhile in front of the head commit ( new branch ) it will show a message of (HEAD -> <new_branch_name> )
 * Creating branch and switching in one go
 ```shell
-git switch -c <branch_name> 
+$ git switch -c <branch_name> 
 ```
 
 ## git CHECKOUT
 * Another way of switching
 ```shell
-git checkout <branch_name> 
+$ git checkout <branch_name> 
 ```
 * Old way to creating branch and switching into it 
 ```shell
-git checkout -b <branch_name>
+$ git checkout -b <branch_name>
 ```
 
 ## What if we try to change branch, with changes in STAGING area?
@@ -206,13 +206,13 @@ git checkout -b <branch_name>
 ## delete BRANCH
 * Deleting a branch. ( You cannot be on same branch which you are deleting. It will also give an error if branch we are deleting is not MERGED )
 ```shell
-git branch -d <branch Name> 
-git branch --delete <branch Name> 
+$ git branch -d <branch Name> 
+$ git branch --delete <branch Name> 
 ```
 * Deleting a branch without MERGING/FORCEFULLY: 
 ```shell
-git branch -D <branch_name> 
-git brach --delete --force <branch_name>  
+$ git branch -D <branch_name>
+$ git brach --delete --force <branch_name>
 ```
 ## renaming BRANCH
 * Change to the branch which you want to rename 
@@ -231,8 +231,8 @@ git branch --move <new_name>
 	* Action : I want to perform merge of Branch a to Master 
 	* Switch to --> Master branch first , then run `git merge a`
 ```
-git switch master
-git merge <branch_name> 
+$ git switch master
+$ git merge <branch_name> 
 ```
 ## Fast Forwarding MERGE
 * Before Merging 
@@ -256,8 +256,6 @@ git merge <branch_name>
 * When the one of the branch have  more number of commits then the master branch. 
 * So when merge takes place, master pointer moves to the head of the branch with which it is merged. 
 * One of the simplest of the merges. 
-
-
 
 ## Recursive MERGE
 * Now this variety of merge is also optional when there is no conflicts. 
@@ -291,10 +289,10 @@ git merge <branch_name>
 
 *Git creates an  addittional commit with two parent commits.
 *After we provide with 
+```shell
+$ git merge <branch name> 
 ```
-git merge <branch name> 
-```
-*It will automatically open text editor for inputing the message for commit. 
+* It will automatically open text editor for inputing the message for commit. 
 
 
 ## Conflict
@@ -330,48 +328,48 @@ git merge <branch_name>
 
 * git diff lists all the changes in our working directory that are not staged for the next commit. Basically whatever we have newly added in the file, after the last commit. 
 * But if its in the staging area , it will show blank. 
-```
-git diff
+```shell
+$ git diff
 ```
 * git diff HEAD lists all changes in the working tree since your last commit. 
 * if any file is displayed as /dev/NULL then it was not there in the previous commit.
 * if the changes in present working tree either staged or unstaged, it will show the difference with last commit.  
 ```
-git diff HEAD
+$ git diff HEAD
 ```
 
 
 * to find out the difference between the staged area and the last commit. 
 ```
-git diff --staged 
+$ git diff --staged 
  	or 
-git diff --cached
+$ git diff --cached
 ```
 * Narrowing down the files to specific files. 
 * From last commit to specific file in STAGING area. 
 ```
-git diff --staged filename1 filename2.....
+$ git diff --staged filename1 filename2.....
 ```
 * From last commit to present working tree (Staged or non staged )
 ```
-git diff HEAD filename1 filename2....
+$ git diff HEAD filename1 filename2....
 ```
 * Comparing the changes from two branches
 ```
-git diff branch1..branch2
+$ git diff branch1..branch2
     or 
-git diff branch1 branch2
+$ git diff branch1 branch2
 ```
 * Comparing the changes from two branches, but for specific files. 
 ```
-git diff branch1 branch2 filename
+$ git diff branch1 branch2 filename
 ```
 * DO remember the file a: will represent file from branch1 and b; represent file from branch2
 * Flipping the branches also flippes the change representation
 
 * Comparing the changes between the two commits 
 ```
-git diff commit_hash1..commit_hash2
+$ git diff commit_hash1..commit_hash2
 ```
 
 ## Stashing
@@ -383,75 +381,73 @@ git diff commit_hash1..commit_hash2
 * You can stash changes and come back from them later. 
 * Running git stash will take all the uncommitted changes (staged and unstaged) and stash them, reverting the changes in your working copy. 
 ```
-git stash 
+$ git stash 
    or 
-git stash save
+$ git stash save
 ```
 * To remove most recently stashed changes in your stash and reapply them to your working copy. 
 ```
-git stash pop 
+$ git stash pop 
 ```
 * If we want to apply whatever is stashed away, without removing it from the stash. 
 * This can be useful if you want to apply stashed changes to multiple branches. 
 ```
-git stash apply
+$ git stash apply
 ```
 * Can add mulitple stashes into stack of stashes. They will all be stashed in the order you added them. 
 ```
-git stash 
+$ git stash 
 // Do something here
-git stash 
+$ git stash 
 // do something 
-git stash
+$ git stash
 ```
 * listing the stashes
 * It will tell the commit at which we have stashed the changes.
 ```
-git stash list
+$ git stash list
 ```
 * Applying specific stashes 
 * By default it will apply, the most recent changes.
 ```
-git stash apply <stash-id> 
+$ git stash apply <stash-id> 
 Ex. 
-git stash apply stash@{2}
+$ git stash apply stash@{2}
 ```
 * Dropping stashes 
 ```
-git stash drop <stash-id> 
+$ git stash drop <stash-id> 
 ```
 * Completely clearing the stash
 ```
-git stash clear
+$ git stash clear
 ```
-
-
 
 ## Rolling back to previous COMMITS
 * We can roll back to previous commits 
 ```
-git checkout <commit hash> 
+$ git checkout <commit hash> 
 ```
 * reverting back to present head 
 ```
-git switch <branch_name you want to switch> 
+$ git switch <branch_name you want to switch> 
 ```
 * You can create another branch if you want to merge the changes 
 ```
-git switch -c <branch_name> 
+$ git switch -c <branch_name> 
 ```
 * GIT CHECKOUT supports another syntax as well: HEAD reference
 * Refers to commit before HEAD(parent)
 ```
-git checkout HEAD~1 
+$ git checkout HEAD~1 
 ```
 * Refers to 2 commits before HEAD
 ```
-git checkout HEAD~2
+$ git checkout HEAD~2
 ```
 * Switching to previous commit
 ```
-git switch -
+$ git switch -
 ```
 
 
@@ -463,33 +459,33 @@ git switch -
 * If changes are important COMMIT the changes. 
 * OR 
 ```
-git checkout HEAD <filename> 
+$ git checkout HEAD <filename> 
         or
-git checkout -- <filename> 
+$ git checkout -- <filename> 
 	or 
-git restore <filename> 
+$ git restore <filename> 
 ```
 * git restore using HEAD reference options
 ```
-git restore --source HEAD~1 <filename>
+$ git restore --source HEAD~1 <filename>
 ```
 * removing files from STAGING area. 
 ```
-git restore --staged <filename>
+$ git restore --staged <filename>
 ```
 
 ## git RESET     
 * We can revert back to commits , and delete all the previous ones. 	
 * But changes wouldn't be modified. 	
 ```
-git reset <commit_hash> 
+$ git reset <commit_hash> 
 ```
 
 ## git HARD RESET
 * We can use this to undo till the <commit whose hash we have provided>
 * And all the corresponding we did till that commit.
 * BE VERY CAREFUL 
-``` 
+```shell 
 git reset --hard <commit-hash> 
     or 
 git reset --hard <head reference using "~" approach> 
