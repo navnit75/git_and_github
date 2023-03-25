@@ -80,16 +80,16 @@ $ git commit
 
 * Staging all the changes of staging area as well as committing. 
 ```
-git commit -am "<message>"
+$ git commit -am "<message>"
          OR
-git commit -a -m "<message>"
+$ git commit -a -m "<message>"
 ```
 
 
 ## git LOG
 * Retrives the information of commits
 ```shell
-git log
+$ git log
 ```
 * It will show an identifier for every commit called `commit hash`.
 
@@ -103,30 +103,30 @@ git log
 ## Changing the default editor of GIT
 * This is for changing the default editor to VSCode
 ```shell
-git config --global core.editor "code --wait"
+$ git config --global core.editor "code --wait"
 ```
 * This is for changing the default editor to nano
 ```shell
-git config --global core.editor "nano -w"
+$ git config --global core.editor "nano -w"
 ```
 * This is for changing the default editor to vim
 ```shell
-git config --global core.editor "vim"
+$ git config --global core.editor "vim"
 ```
 
 ## Log Tweaking
 * Because sometimes the commit messages has to be big
 * Shows first 5 character of commit hash.
 ```shell
-git log --abbrev-commit
+$ git log --abbrev-commit
 ```
 * Shows first 5 character of commit hash and one line message
 ```shell
-git log --oneline 
+$ git log --oneline 
 ```
 * Shows full hash but one line message
 ```shell
-git log --pretty=oneline
+$ git log --pretty=oneline
 ```
 * Remember to keep the first line of commit message as summary of the whole commit message
 
@@ -163,17 +163,17 @@ $ git log
 ## git BRANCH
 * To list the number of branches 
 ```shell
-git branch
+$ git branch
 ```
 * The one which  is active will have "*" before the name. 
 
 * Creating the new branch. This just creates the branch, it doesn't switch you to that branch. 
 ```shell
-git branch <branch-name>
+$ git branch <branch-name>
 ```
 * Listing the branch information with the tip commit message
 ```shell
-git branch -v 
+$ git branch -v 
 ```
 ## git SWITCH
 * Used to switch branches. Branch name has to be perfect. 
