@@ -228,7 +228,10 @@ git branch --move <new_name>
 * There could be conflicts in the code. 
 * One of the easiest and simplest variety of merge with no conflicts is , FAST FORWARD MERGE. 
 * Example of fast forward is shown in above ASCII diagram. 
-* Switch to destination ( the branch we are going to merge our branch with ) BRANCH --> before merging the branch. 
+* Switch to destination branch. 
+	* Ex: Branch a : Feature Branch
+	* Action : I want to perform merge of Branch a to Master 
+	* Switch to --> Master branch first , then run `git merge a`
 ```
 git switch master
 git merge <branch_name> 
