@@ -544,7 +544,8 @@ git rebase --abort
 ```
 git rebase -i HEAD~4
 ```
-* In our text editor, we'll see a list of commits alongside a list of commands that we can choose from. (order are reversed)
+* In our text editor, we'll see a list of commits alongside a list of commands that we can choose from. 
+* `The order of commits would be reversed. As in the newest commit will at downmost line , and oldest commit would be in uppermost line.` 
 * Commands are executed through reversed order itself. 
 ```
 pick - use the commit
