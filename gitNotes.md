@@ -217,8 +217,8 @@ $ git brach --delete --force <branch_name>
 ## renaming BRANCH
 * Change to the branch which you want to rename 
 ```shell
-git branch -m <new_name> 
-git branch --move <new_name> 
+$ git branch -m <new_name> 
+$ git branch --move <new_name> 
 ```
 
 ## Merge
