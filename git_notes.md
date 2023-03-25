@@ -6,31 +6,31 @@
 
 * Configuring your username
 ```shell
-git config --global user.name "Navnit Kumar" 
+$ git config --global user.name "Navnit Kumar" 
 ```
 
 * Checking your username 
 ```shell
-git config user.name
+$ git config user.name
 ```
 * Configuring your email
 ```shell
-git config --global user.email "kumar.navnit4175@gmail.com"
+$ git config --global user.email "kumar.navnit4175@gmail.com"
 ```
 * Checking your email 
 ```shell
-git config user.email
+$ git config user.email
 ```
 
 ## Basic Commands
 
 * Info regarding current status of git repo
 ```shell
-git status
+$ git status
 ```
 * Initialization of repository.
 ```shell
-git init
+$ git init
 ```
 * WARNING! DO NOT INITIALIZE A REPO INSIDE OF A REPO
     * i.e. Before running git init , use git status to verify that you are not currently inside a repo.
@@ -61,20 +61,21 @@ git init
 
 * Adding the files to the staging area
 ```shell
-git add file1 file2
+$ git add file1 file2
 ```
 * to stage all the (modified)files at once
 ```shell
-git add . 
+$ git add . 
 ```
 ## git COMMIT
 * Committing the files for creating the checkpoint
 ```shell
-git commit -m "my message" 
+$ git commit -m "my message" 
 ```
-* If messages are not mentioned then it would open default editor( most cases its VIM )  
+* Committing when you need to provide multiline messages to the commit. 
+* Devops teams of the company follows a muliline commit rules , in which various jira tickets and other stuff are linked for reference. 
 ```shell
-git commit 
+$ git commit 
 ```
 
 * Staging all the changes of staging area as well as committing. 
@@ -90,7 +91,7 @@ git commit -a -m "<message>"
 ```shell
 git log
 ```
-* It will show an identifier for every commit called commit hash.
+* It will show an identifier for every commit called `commit hash`.
 
 ## Atomic Commits
 * Keep your commits on single thing. 
@@ -131,27 +132,23 @@ git log --pretty=oneline
 
 
 ## Amending Commits
-* This only works if you have made mistake on recent commit.
-
-* Mistake commit 
-```shell
-git commit -m "<message>"
-```
-* Rectify the mistake by adding the files you missed. 
-```shell
-git add file1 file2
-```
+* This only works if you have made mistake on `recent commit`.
+* Suppose you have made some changes , but you realise there was some mistake in the commit message. 
+* Or there was some modification extra modification required in one of the files. 
+* As the commits are tracked and raising one more commit can elongate the process of commit getting merged. 
+* As in `professional circle` there are code reviews which would be needed for the Code which has to be merged. 
+* The process of , adding extra changes in the same commit is called `AMENDING`.
 * Ammend the commit ( Text editor will open , with message provided )
 ```shell
-git commit --amend
+$ git commit --amend
 ```
 
 ## .gitignore
 * create a file called .gitignore in the root of repo.
 * inside the file, we can write the patterns to tell git which files and folders to ignore. 
     * Ex. 
-    * .DS_Store will ignore files named .DS_Store
-    * folderName/ will ignore an entire directory
+    * .DS_Store will ignore `files named .DS_Store`
+    * `folderName/` will ignore an entire directory
     * .log will ignore any file with .log extension. 
 * You need to commit .gitignore in every commit. 
 * If there is any changes happens in the ignored files , the git will not cover. 
@@ -159,9 +156,10 @@ git commit --amend
 ## Head
 * To know where the head is pointing at 
 ```
-git log 
-HEAD -> master 
+$ git log 
 ```
+* Check for HEAD -> master 
+
 ## git BRANCH
 * To list the number of branches 
 ```shell
@@ -391,7 +389,7 @@ git stash save
 ```
 * To remove most recently stashed changes in your stash and reapply them to your working copy. 
 ```
-git stash pop. 
+git stash pop 
 ```
 * If we want to apply whatever is stashed away, without removing it from the stash. 
 * This can be useful if you want to apply stashed changes to multiple branches. 
