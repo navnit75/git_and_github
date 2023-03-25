@@ -66,20 +66,23 @@ git remote remove <name>
 ```
 ## PUSHING 
 * Push all the changes in all the branches
-```
-git push <remote> 
+```shell
+$ git push <remote> 
 ```
 * Pushing some work on git hub repo
-```
-git push <remote> <branch> 
+* Here the `<remote>` denotes the Remote Repo
+* Here the `<branch>` denotes the Local and Remote branch. 
+* This will bringout a doubt ? Is it necessary that the Local and Remot branch needs to have the same name ? `NO`
+```shell
+$ git push <remote> <branch> 
 ```
 * When security error comes 
 ```
 Developer_settings > generate personal token > copy the personal token and use it in place of the password
 ```
-* While we often want to push a local branch up to a remote branch of the same name we don't have to . 
-```
-git push <remote> <local branch> : <remote branch>	
+* When we have different names scenerios or if we want to push the changes made on some local branch to different remote branch. 
+```shell
+$ git push <remote> <local branch> : <remote branch>	
 ```
 * -u option of git push
 * Running the git push -u origin master sets the upstream of local master branch so that it tracks the master branch on the origin repo. 
