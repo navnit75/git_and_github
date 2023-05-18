@@ -1,7 +1,7 @@
 # Git
 * This repo Contains my rough notes for learning Git and Github, made while going through the below bootcamp. 
 * Course Name: The Git and Github Bootcamp
-* Course Duration: 17 hours 
+* Course Duration: 18 hours 
 
 # Certificate of Completion
 - **(Just for my reference)** [Completion Certificate](https://udemy-certificate.s3.amazonaws.com/image/UC-48d5964c-a4db-459b-a652-835af3ccc754.jpg)
